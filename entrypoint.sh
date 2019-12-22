@@ -63,7 +63,7 @@ if [ "$DEPLOY_SITE" = true ]; then
 	fi
 fi
 
-
+gem install bundler -v 2.0.2
 bundle update --bundler
 
 echo '[!] - Installing Gem Bundle'
