@@ -64,7 +64,7 @@ if [ "$DEPLOY_SITE" = true ]; then
 fi
 
 
-
+bundle update --bundler
 
 echo '[!] - Installing Gem Bundle'
 bundle install
