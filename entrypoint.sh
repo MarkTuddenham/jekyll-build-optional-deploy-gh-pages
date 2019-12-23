@@ -91,7 +91,7 @@ if [ "$DEPLOY_SITE" = true ]; then
 		exit 1
 	fi
 	
-	cd "${BUILD_DIR}"
+	pushd "${BUILD_DIR}"
 	remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" && \
 	remote_branch="${REMOTE_BRANCH}" && \
 	
@@ -102,12 +102,12 @@ if [ "$DEPLOY_SITE" = true ]; then
 	
 	echo -n '[!] - Files to Commit:' && ls -l | wc -l && \
 	
-	git commit -m'action build' > /dev/null 2>&1 && \
+	git commit -m'Automated Build' > /dev/null 2>&1 && \
 	git push --force $remote_repo master:$remote_branch > /dev/null 2>&1 && \
 	
-	rm -fr .git && \
+	rm -rf .git && \
 	
-	cd ../
+	popd
 fi
 
 echo '[!] - EntryPoint has finished.'
