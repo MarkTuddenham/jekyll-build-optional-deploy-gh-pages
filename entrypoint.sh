@@ -92,6 +92,9 @@ if [ "$DEPLOY_SITE" = true ]; then
 	fi
 	
 	pushd "${BUILD_DIR}"
+	
+	touch .nojekyll
+	
 	remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" && \
 	remote_branch="${REMOTE_BRANCH}" && \
 	
