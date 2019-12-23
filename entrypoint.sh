@@ -91,7 +91,7 @@ if [ "$DEPLOY_SITE" = true ]; then
 		exit 1
 	fi
 	
-	pushd "${BUILD_DIR}"
+	cd "${BUILD_DIR}"
 	
 	touch .nojekyll
 	
@@ -110,7 +110,7 @@ if [ "$DEPLOY_SITE" = true ]; then
 	
 	rm -rf .git && \
 	
-	popd
+	cd -
 fi
 
 echo '[!] - EntryPoint has finished.'
