@@ -15,8 +15,9 @@ LABEL version="0.0.2"
 LABEL repository="http://github.com/MarkTuddenham/jekyll-build-optional-deploy-gh-pages"	
 LABEL maintainer="Mark Tuddenham"
 
-# Add gulp
-
+# Add node.js and gulp.js
+RUN curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
+    apt-get install -y nodejs
 RUN npm install --global gulp-cli
 
 ADD entrypoint.sh /entrypoint.sh
