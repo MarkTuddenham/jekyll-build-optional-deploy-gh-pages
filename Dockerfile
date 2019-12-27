@@ -4,7 +4,8 @@ ENV RUBYGEMS_VERSION=2.7.0
 # Set default locale for the environment	
 ENV LC_ALL C.UTF-8	
 ENV LANG en_US.UTF-8	
-ENV LANGUAGE en_US.UTF-8	
+ENV LANGUAGE en_US.UTF-8
+ENV NODE_ENV production
 
 LABEL "com.github.actions.name"="Building a jekyll site from configured directory, maybe deploying it."	
 LABEL "com.github.actions.description"="A more configurable jekyll repo builder with configurable deployment options."	
